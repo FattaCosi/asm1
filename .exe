@@ -1,0 +1,16 @@
+.model small
+.stack 100h
+.code
+start:
+mov ax,@data
+mov ds,ax
+mov dx, offset message_0
+mov ah,9
+int 21h
+mov dx,offset message_1
+int  21h
+int 20h
+.data
+message_0 db «Hello world!» ,0dh,0ah, ‘$’
+message_1 db «hello» ,0dh,0ah, ’$’
+end start
